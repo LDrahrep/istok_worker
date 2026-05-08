@@ -55,7 +55,7 @@ export default function ComponentsPage() {
           <TopBar
             title="Hotel"
             onBack={() => {}}
-            right={<LangToggle value={lang} onChange={setLang} />}
+            right={<LangToggle lang={lang} onChange={setLang} />}
           />
         </Card>
       </Block>
