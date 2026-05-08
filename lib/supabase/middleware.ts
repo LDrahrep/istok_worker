@@ -6,11 +6,12 @@ import { NextResponse, type NextRequest } from "next/server";
 // enforcement happens in the (app) layout via `requireWorker()`.
 //
 // Public routes that bypass the auth gate:
+// - /welcome            → marketing landing for unauthenticated users
 // - /login              → magic-link form
 // - /auth               → Supabase OAuth/magic-link callback
 // - /apply              → friend-invite acceptance flow (no session yet)
 // - /dev                → design-system kitchen sink; pages 404 in production
-const PUBLIC_PATHS = ["/login", "/auth", "/apply", "/dev"];
+const PUBLIC_PATHS = ["/welcome", "/login", "/auth", "/apply", "/dev"];
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname.startsWith(p));

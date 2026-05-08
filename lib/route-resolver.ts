@@ -13,6 +13,7 @@ import { isAdminRole, isWorkerRole } from "@/lib/roles";
 // terminal routes based on the signed-in user's row.
 
 export type WorkerRoute =
+  | "/welcome"
   | "/login"
   | "/onboarding"
   | "/waiting"
@@ -26,7 +27,9 @@ export type WorkerRoute =
 export function resolveWorkerRoute(
   me: CurrentEmployee | null,
 ): WorkerRoute | { kind: "external"; href: string } {
-  if (!me) return "/login";
+  // Unauthenticated → marketing-style welcome (Module 6). The "Sign in with
+  // email" CTA there sends them to /login (Module 4).
+  if (!me) return "/welcome";
   if (isAdminRole(me.role)) {
     return {
       kind: "external",
