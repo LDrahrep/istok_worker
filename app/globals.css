@@ -24,13 +24,26 @@
   --color-warning: #E8B339;
   --color-danger: #FF8A7A;
 
+  /* AppTints — partner accents used by AppTile / AppsSection. Mirror
+     iOS Theme/AppTints.swift; add new tints simultaneously in both files. */
+  --color-tint-carbot: #7BB1FF;
+  --color-tint-trunk: #E9C978;
+  --color-tint-timesheet: #7EE787;
+  --color-tint-safety: #FF8A7A;
+
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  /* Serif display — system serif. iOS uses .system(design: .serif) which
+     resolves to New York; on the web we fall through to a chain. Used for
+     hero titles, section headings, metric values. */
+  --font-serif: ui-serif, "New York", Charter, Georgia, "Times New Roman", serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-card: 18px;
   --radius-xl: 20px;
+  --radius-pill: 9999px;
 }
 
 html {

@@ -9,7 +9,8 @@ import { NextResponse, type NextRequest } from "next/server";
 // - /login              → magic-link form
 // - /auth               → Supabase OAuth/magic-link callback
 // - /apply              → friend-invite acceptance flow (no session yet)
-const PUBLIC_PATHS = ["/login", "/auth", "/apply"];
+// - /dev                → design-system kitchen sink; pages 404 in production
+const PUBLIC_PATHS = ["/login", "/auth", "/apply", "/dev"];
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname.startsWith(p));
