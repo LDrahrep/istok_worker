@@ -19,7 +19,7 @@ export type TabSpec = {
 };
 
 export const DEFAULT_TABS: readonly TabSpec[] = [
-  { key: "home", label: "Home", icon: "home", href: "/" },
+  { key: "home", label: "Home", icon: "home", href: "/dashboard" },
   { key: "hotel", label: "Hotel", icon: "bed", href: "/hotel" },
   { key: "project", label: "Project", icon: "tool", href: "/project" },
   { key: "profile", label: "Profile", icon: "user", href: "/profile" },
